@@ -4,6 +4,7 @@ RUN apt-get update && apt-get -y -q install software-properties-common tini xtai
 RUN apt-add-repository ppa:iconnor/zoneminder-1.36 && \
     apt-get update && \
     apt install -y -q zoneminder=1.36.35-noble1
+RUN echo 'America/Los_Angeles' > /etc/timezone
 RUN ln -s /var/cache/zoneminder/cache /usr/share/zoneminder/www/ && \
     cp -r /usr/share/zoneminder/www/fonts /usr/share/zoneminder/www/skins/classic/css/
 ADD entrypoint.sh /entrypoint.sh
