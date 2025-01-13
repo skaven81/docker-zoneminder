@@ -12,8 +12,8 @@ while true; do
     fi
 done
 
-echo "Updating database schema..."
-mysql -h mariadb -P 3306 -u root -pflargle < /usr/share/zoneminder/db/zm_create.sql
+#echo "Updating database schema..."
+#mysql -h mariadb -P 3306 -u root -pflargle < /usr/share/zoneminder/db/zm_create.sql
 mysql -h mariadb -P 3306 -u root -pflargle -e "grant lock tables,alter,drop,select,insert,update,delete,create,index,alter routine,create routine, trigger,execute,references on zm.* to 'zmuser'@'%' identified by 'zmpass';"
 
 echo "Starting Apache"

@@ -30,3 +30,8 @@ See https://github.com/skaven81/HomeServices
   * `/var/log/zoneminder` - zoneminder logs
   * `/var/log/apache2` - apache logs
 
+Database update/recovery
+------------------------
+
+If the database gets wiped out, exec into the Zoneminder container and run `zmupdate.pl -f` to
+regenerate the configuration.
