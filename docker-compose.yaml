@@ -1,0 +1,16 @@
+services:
+  mariadb:
+    image: mariadb:11.6
+    pull_policy: always
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: flargle
+    expose:
+    - "3306"
+  zoneminder:
+    image: skaven/zoneminder:1.36
+    tty: true
+    links:
+    - mariadb
+    ports:
+    - 8080:80
